@@ -5,15 +5,16 @@ RN = "\r\n"
 RNB = b"\r\n"
 s=lambda x,y=None:x.split(y)
 def non(a, b):
-    pass
+    print("Ligma balls")
+    return (b,print)
 
 h=lambda c: (
     l := (
         lambda a,d: (
             (
-                (b := d+c.recv(2048).decode("utf-8"), a, print(d)),
-                (d, non)
-            )[RN*2 not in b][1](a, b)
+                (b := d+c.recv(2048).decode("utf-8"), a, print(b)),
+                (d, (non))
+            )[RN*2 not in d][1](a, b)
         )
     ),
     d:=l(l, "")[0],
@@ -33,4 +34,4 @@ u.bind(("0.0.0.0", 3000))
 u.listen(5)
 while True:
     t.Thread(target=h, args=(u.accept()[0],)).start()
-    # certifiedwomenfriendlyprograming #Loverofwomen #Bringbackväsensmetafysiken #Bringbackwindowsvista #MulleMeck=Slut???
+    # certifiedwomenfriendlyprograming #Loverofwomen #Bringbackväsensmetafysiken #Bringbackwindowsvista #MulleMeck=Slut??? #Girlpower #Felix är ett namn med latinskt ursprung (Felicius), med betydelsen lycklig.
