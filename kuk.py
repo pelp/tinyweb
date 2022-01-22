@@ -1,2 +1,2 @@
-v = "kuk"
-print(v)
+import sys
+print(sys.argv)
