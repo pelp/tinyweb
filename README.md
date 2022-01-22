@@ -24,12 +24,12 @@ As any sane person would, they started out by making part of the webserver by im
 This way they could track down any bugs before it was too late. Little did they know at this point that they
 would start to experience feature creep and would have to end up trying to implement things in the unreadable
 code later anyways. But I'm getting ahead of myself.
-The first version of the code can be seen here (69cf7c0fa79e203b379a1b9e7c9263674dde1b09).
+The first version of the code can be [seen here](https://github.com/pelp/tinyweb/commit/69cf7c0fa79e203b379a1b9e7c9263674dde1b09).
 
 ## The great minifying
 
 Once the two friends had gotten a lay of the land they got to work minifying the original code.
-They immedietly noticed the abundance of `String.split()` calls, which they replaced with a lambda function (61b26df208d340d11fb1ea8f9a22fda92e9cf012).
+They immedietly noticed the abundance of `String.split()` calls, which they [replaced with a lambda function](https://github.com/pelp/tinyweb/commit/61b26df208d340d11fb1ea8f9a22fda92e9cf012).
 They fought on, tackling the next foe: The nested lambda functions and recursion hell.
 It's starting to become difficult for them to keep track of all the parentheses and
 variable scopes. One second you thought you had the variable where you needed it,
@@ -39,20 +39,20 @@ Once they finally got the script to run without errors they could tackle the nex
 issue, converting all this new fresh lambda code to compact tuples that they could
 chop up between lines in whichever way they desired. By bending the rules of the walruss
 operator (:=) they were able to put everything into tuples and not be restricted by the
-fact that you aren't supposed to do variable assignment inside a tuple (745ff1dfa310aeb0e29a2d8929050e36507a4012).
+fact that you aren't supposed to do variable assignment [inside a tuple](https://github.com/pelp/tinyweb/commit/745ff1dfa310aeb0e29a2d8929050e36507a4012).
 
-Finally the minimizing has begun (4e807a10c7963555fd864f304530a694fc32dc8a), they have started to remove: whitespaces,
+Finally [the minimizing has begun](https://github.com/pelp/tinyweb/commit/4e807a10c7963555fd864f304530a694fc32dc8a), they have started to remove: whitespaces,
 linebreaks, yes even all forms of indentation. Only a garbled mess of parentheses is left.
 But the fight is far from over. The maximum line length is still to be dealt with.
 
-The code is now starting to take the shape, the long lines are gone and almost at the correct length (7a07b77df1299f2bc6961a166b159d9a30464fbd).
+The code is now starting to take the shape, the long lines are gone and [almost at the correct length](https://github.com/pelp/tinyweb/commit/7a07b77df1299f2bc6961a166b159d9a30464fbd).
 
 The problem with the import line at the top of the code is that it leaves unused space where other
 code can be written in it's place. The two friends felt like using semicolons and backslashes was
 cheating, that would defeat half the challenge. After searching for answers in their previous attempt at this feat,
 they found it in the form of `__import__`; They did unspeakable things to the poor dunder import method.
 This might have increased the overall number of characters used for the import and following references but
-this suddenly made the space on the first line usable for code other than imports (3fc1cd6320112bdfd6601a4e80087595fa166d59).
+this suddenly made the space on the first line usable for [code other than imports](https://github.com/pelp/tinyweb/commit/3fc1cd6320112bdfd6601a4e80087595fa166d59).
 
 ## The ending
 
@@ -61,9 +61,9 @@ would be a good idea to implement dynamic content by loading a python script tha
 This "simple" idea turned out to add a lot more complexity to the project, and made the code even more confusing.
 
 By using the extension of the requested file they made a condition that would return the contents of a file if it
-ended with anything other than .py, otherwise execute it (8e1e142ef28716a573f5b4b849caaafdd8b8579d).
+ended with anything other than .py, [otherwise execute it](https://github.com/pelp/tinyweb/commit/8e1e142ef28716a573f5b4b849caaafdd8b8579d).
 
-After some struggling the implementation (253ae1ec8f228821df10730cf85cca69f2287785) now works and the only
+After some struggling the [implementation](https://github.com/pelp/tinyweb/commit/253ae1ec8f228821df10730cf85cca69f2287785) now works and the only
 thing left is for the code to be form-fitted to the character limit. And be turned into a solid block.
 
 Moving some things around, adding and removing some stuff made the code nearly fill neatly into a 79x9 block
@@ -74,5 +74,5 @@ a few improvements to the http headers. Adding a content encoding so that it cou
 adding the `Server: tw/v1` header. This was the final piece of the puzzle.
 
 There they were, 9 lines, 79 characters each. 7 lambda functions, 13 walruss operators and serveral crimes against developers later, they had successfully made
-a working http server (9c4d129a35801ebf454c7c4f335f74eb838e37db) that could serve static html files as well as
+a [working http server](https://github.com/pelp/tinyweb/commit/9c4d129a35801ebf454c7c4f335f74eb838e37db) that could serve static html files as well as
 dynamic content rendered from python files.
