@@ -1,9 +1,7 @@
-(R:=b"\r\n",s:=lambda a,b=None:a.split(b),i:=[__import__(a)for a in s("socket "
-"os _thread subprocess")],u:=i[0].socket(),u.bind(("",80)),u.listen(),h:=lambda
-c:(d:=(l:=(lambda a,d:(((d,lambda a,b:(b,)),(b:=d+c.recv(2048),a))[R*2 in d][1]
-(a,b))))(l,b"")[0],y:=s(s(s(s(d,R*2)[0],R)[0])[1],b"?"),u:=y[0][1:],"felix&kim"
-,d:=(lambda x:((f:=open(("i.htm",u)[i[1].path.isfile(x)],"rb")).read(),f.close(
-))[0],lambda x:i[3].run(["py",x,b"".join(y[1:])],stdout=i[3].PIPE).stdout)[s(u,
-b".")[-1]==b"py"](u),c.send((b"HTTP/2 200\r\nServer:tw/v1\r\nContent-Type:text"
-b"/html;charset=utf-8\r\nContent-Length:"+str(len(d)).encode()+b"\r\n\r\n"+d)),
-c.close()),(k:=(lambda a:(i[2].start_new_thread(h,(u.accept()[0],)),a(a))))(k))
+(s:=lambda a,b=" ":a.split(b),(u:=(i:=[__import__(a)for a in s("socket os _thr"
+"ead")])[0].socket()).bind(("",80)),u.listen(),R:="\r\n",r:=R*2,(k:=(lambda a:(
+i[2].start_new_thread(lambda c:(d:=c.recv(9999).decode(),y:=s(s(d)[1],"?"),u:=y
+[0][1:],d:=(lambda:(f:=open(("idx.htm",u)[i[1].path.isfile(u)])).read(),lambda:
+i[1].popen("python "+i[1].getcwd()+" ".join(y)).read())[s(u,".")[-1]=="py"](),c
+.send(("HTTP/2 200\r\nServer:tw\r\nContent-Type:text/html;charset=utf-8\r\nCon"
+f"tent-Length:{len(d)}"+r+d).encode()),c.close()),(u.accept()[0],)),a(a))))(k))
