@@ -73,6 +73,17 @@ now they had to add something that wasn't strictly needed. After some thought, e
 a few improvements to the http headers. Adding a content encoding so that it could properly render utf-8 characters. As well as
 adding the `Server: tw/v1` header. This was the final piece of the puzzle.
 
-There they were, 9 lines, 79 characters each. 7 lambda functions, 13 walruss operators and serveral crimes against developers later, they had successfully made
+There they were, 9 lines, 79 characters each. 7 lambda functions, 13 walruss operators and several crimes against developers later, they had successfully made
 a [working http server](https://github.com/pelp/tinyweb/commit/9c4d129a35801ebf454c7c4f335f74eb838e37db) that could serve static html files as well as
 dynamic content rendered from python files.
+
+## The revival
+
+After 2 long years with no commits the two friends set out to improve their tiny webserver. They started by removing redundant split operations to 
+save a few characters, they trimmed some minor details to save a few characters here and there. But when they realised that they could remove the whole 
+`subprocess` import and just use the `os` modules `popen` funciton to run the python programs great steps towards minifying even further was made. While 
+going over the code with fresh eyes and 2 more years of experience they realised that the recursive data receiving was unnecessary and they could just 
+increase the receive buffer so that it would fit every possible request URL. This saved greatly on characters as well. As a final step, they removed 
+their watermark to save even more and to their surprise now the program would fit in 7 lines perfectly, each line being 79 characters.
+
+So, to correct the previos statement. There they were, 7 lines, 79 characters each. 5 lambda functions, 11 walruss operators and several crimes against developers later, they had successfully made a [working http server](https://github.com/pelp/tinyweb/commit/6ff00e4d422cf18f1d83e33e6f77700a0f9ca25e) that cold server static html files as well as dynamic content rendered from python files.
