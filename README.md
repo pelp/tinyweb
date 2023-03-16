@@ -10,7 +10,7 @@ squished it down to just a few lines of unreadable code *(see: spawn of satan)*.
 version of the `roller.py` program that you can find in this here repository, which ran continiously and
 asked for user input instead of being served as a website in a single shot fashion.
 
-This sparked interest deep within the two friends, they now had a new-found passion for writing terible
+This sparked interest deep within the two friends, they now had a new-found passion for writing terrible
 code that no one could read. Code that broke all known laws of pep8 EXCEPT ONE! the single most important one,
 the holiest of them all: the maximum line length of 79 characters.
 
